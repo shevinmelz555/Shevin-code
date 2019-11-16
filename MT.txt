@@ -1,0 +1,22 @@
+import java.util.Scanner;
+        public class Score {
+            public void Display(){
+                Scanner input = new Scanner(System.in);
+                System.out.println("Please enter your number: ");
+                int newPoint = input.nextInt();
+                newPoint = calculateSc(newPoint);
+                System.out.println(newPoint);
+            }
+            public static String calculateSc(int point) {  
+                if (point % 3 == 0) {
+                     return "my";
+                }else if (point % 5 == 0) {
+                     return "theresa";
+                }else if (point % 3 == 0 && point % 5 == 0) {
+                     return "mytheresa";
+               
+                }else {
+                     return (point);
+                }
+           }
+       }
