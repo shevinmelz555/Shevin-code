@@ -1,0 +1,25 @@
+def validate response Food2Fork ()
+
+{
+BaseTest.test.get.info(“<b> Validate Call </b>”);
+
+val body = json.getF2FBody()
+
+var response = given().pathparam().headers(“Content_type”, “application/json”).body(body).when().
+GET(https://www.food2fork.com/api/search?key=e676ea4152b2077f7e7bef634e232fff).then ();
+
+}
+
+
+
+response = F2F.SearchFor(
+			TestDataReader.getTestData("https://www.food2fork.com/api/search?q=cookie monster cupcakes&key=e676ea4152b2077f7e7bef634e232fff"));
+
+
+validator = new ResponseValidator();
+		validator.verifyResponseCode(response, ResponseCodes.200);
+		test.get.pass("<mark>Search Success</mark>")
+		
+		response = response.Success(
+			TestDataReader.getTestData("Passed")
+		)
