@@ -1,0 +1,18 @@
+
+class MytheresaHomePage extends BasePage {
+
+	new(RemoteWebDriver driver) {
+		super(driver)
+
+	}
+
+       @FindBy(how=How.XPATH, using="//input[@id="search"]")
+	public WebElement txt_search;
+	
+	@FindBy(how=How.XPATH, using="//button[@name='executeDisconnect']")
+	public WebElement btn_search;
+       
+       @FindBy(how=How.XPATH, using="//span[text()='Gucci']")
+	public WebElement lbl_Guccibags;
+            
+}

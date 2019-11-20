@@ -1,0 +1,45 @@
+import MytheresaHomePage
+
+class TC1_SearchTestMytheresa extends BaseTest{
+	
+		
+@Test(description="Customer Search for GUCCI bags ", alwaysRun=true) // retryAnalyzer = Retry
+		def void  {
+		test.get.assignAuthor("Shevin")
+	
+
+// User goes to https://www.mytheresa.com/en-de/ 
+		
+WebDriver driver = new FirefoxDriver(); 
+
+driver.get("https://www.mytheresa.com/en-de/");
+
+waitForPageLoadComplete(driver);
+
+
+//Searches for “Gucci bags”  
+
+def void ClickSearchToGetGUCCIBags() {
+		var MytheresaHomePage mthomePage = new MytheresaHomePage(driver)
+
+		mthomePage.txt_search.sendkeys("Gucci bags");
+		mthomePage.btn_search.click
+		waitForPageLoadComplete(driver)
+					
+	}
+
+		
+//Verify the result of search displayed
+
+def void ClickSearchToGetGUCCIBags() {
+		var MytheresaHomePage mthomePage = new MytheresaHomePage(driver)
+
+		waitForPageLoadComplete(driver)
+		mthomePage.lbl_Guccibags.waitToBeDisplayed;
+                mthomePage.lbl_Guccibags.isDisplayed;
+             			
+	}		
+	
+				
+}
+}
